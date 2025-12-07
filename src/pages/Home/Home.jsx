@@ -9,8 +9,18 @@ import TitleCard from '../../components/TitleCards/TitleCards'
 import Footer from '../../components/Footer/Footer'
 
 const Home = () => {
- 
-  return (
+  const titleOne = import.meta.env.VITE_CARD_LAYOUT_ONE_NAME;
+  const titleTwo = import.meta.env.VITE_CARD_LAYOUT_TWO_NAME;
+  const titleThree = import.meta.env.VITE_CARD_LAYOUT_THREE_NAME;
+  const titleFour = import.meta.env.VITE_CARD_LAYOUT_FOUR_NAME;
+  const titleFive = import.meta.env.VITE_CARD_LAYOUT_FIVE_NAME;
+
+  const apiURLOne = import.meta.env.VITE_CARD_LAYOUT_ONE_API_URL;
+  const apiURLTwo = import.meta.env.VITE_CARD_LAYOUT_TWO_API_URL;
+  const apiURLThree = import.meta.env.VITE_CARD_LAYOUT_THREE_API_URL;
+  const apiURLFour = import.meta.env.VITE_CARD_LAYOUT_FOUR_API_URL;
+  const apiURLFive = import.meta.env.VITE_CARD_LAYOUT_FIVE_API_URL;
+    return (
     <div  className='home'>
         <Navbar/>
         <div className='hero'>
@@ -22,14 +32,14 @@ const Home = () => {
               <button className='btn'><img src={play_icon} alt="" />Play</button>
               <button className='btn dark-btn'><img src={info_icon} alt="" />More Info</button>
             </div>
-            <TitleCard/>
+            <TitleCard title={titleOne} category={apiURLOne}/>
           </div>
         </div>
         <div className="more-cards">
-           <TitleCard title={"Blockbuster Movies"} category={"top_rated"}/>
-           <TitleCard title={"Only on Netflix"}  category={"popular"}/>
-           <TitleCard title={"Upcoming"}  category={"upcoming"}/>
-           <TitleCard title={"Top Picks for You"}  category={"now_playing"}/>
+           <TitleCard title={titleTwo} category={apiURLTwo}/>
+           <TitleCard title={titleThree}  category={apiURLThree}/>
+           <TitleCard title={titleFour}  category={apiURLFour}/>
+           <TitleCard title={titleFive}  category={apiURLFive}/>
         </div>
         <Footer/>
       </div>
